@@ -26,14 +26,12 @@ nav button .n{color:inherit;opacity:.7;margin-left:4px}
 main{max-width:1100px;margin:0 auto;padding:16px 20px 60px}
 .status{color:var(--mut);font-size:13px;margin:4px 0 14px}
 section h2{font-size:15px;text-transform:uppercase;letter-spacing:.04em;color:var(--acc);margin:26px 0 10px;border-bottom:1px solid var(--line);padding-bottom:6px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:12px}
+.grid{display:flex;flex-wrap:wrap;gap:12px}
+.grid>article{flex:1 1 330px;min-width:0}
 article{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
 article h3{font-size:15px;margin:0 0 6px}
 article h4{font-size:13px;text-transform:uppercase;letter-spacing:.03em;color:var(--mut);margin:12px 0 4px}
-article.wide{grid-column:1/-1;overflow-x:auto}
-.grid.n1{grid-template-columns:1fr}
-.grid.n2{grid-template-columns:1fr 1fr}
-@media (max-width:720px){.grid.n2{grid-template-columns:1fr}}
+.grid>article.wide{flex-basis:100%;overflow-x:auto}
 table.rubric{min-width:760px}
 table.rubric th:nth-child(3){background:#f6d6d6;color:#14181f}table.rubric th:nth-child(4){background:#f6e7c8;color:#14181f}table.rubric th:nth-child(5){background:#d9ecd9;color:#14181f}table.rubric th:nth-child(6){background:#cfe2f7;color:#14181f}
 article p{margin:6px 0}
@@ -131,8 +129,6 @@ function run() {
   });
   document.querySelectorAll('section').forEach(s => {
     s.classList.toggle('hide', !s.querySelector('article:not(.hide)'));
-    const n = s.querySelectorAll('article:not(.hide):not(.wide)').length;
-    const g = s.querySelector('.grid'); g.classList.toggle('n1', n <= 1); g.classList.toggle('n2', n === 2);
   });
   navBuild(counts);
   empty.classList.toggle('hide', shown > 0);
