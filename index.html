@@ -14,6 +14,7 @@ header{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:1px 
 .top{display:flex;gap:16px;align-items:center;flex-wrap:wrap;max-width:1100px;margin:0 auto}
 h1{font-size:17px;margin:0;white-space:nowrap}
 h1 span{color:var(--mut);font-weight:500}
+h1 .upd{display:block;font-size:12px;font-weight:400;color:var(--mut);margin-top:2px}
 .search{flex:1;min-width:240px;position:relative}
 .search input{width:100%;font:inherit;padding:9px 12px 9px 34px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
 .search input:focus{outline:2px solid var(--acc);border-color:transparent}
@@ -69,7 +70,7 @@ footer{max-width:1100px;margin:0 auto;padding:0 20px 30px;color:var(--mut);font-
 <body>
 <header>
  <div class="top">
-  <h1>Wargame Quick Reference <span>· OTS 27-05</span></h1>
+  <h1>Wargame Quick Reference <span>· OTS 27-05</span><small class="upd">Last updated 26 Nov 2026</small></h1>
   <div class="search">
    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
    <input id="q" type="search" placeholder="Search rules, tasks, controls… (e.g. MOG, forklift, winchester)" autocomplete="off" aria-label="Search">
